@@ -1,8 +1,5 @@
 #include <unistd.h>
 
-/* we need to have a simple putnbr function for this one
- * since we'll be working with and printing numbers 
- */
 void ft_putnbr(int i)
 {
     if (i > 9)
