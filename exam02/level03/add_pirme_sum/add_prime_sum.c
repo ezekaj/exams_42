@@ -56,8 +56,11 @@ int	main(int ac, char **av)
 		nbr = ft_atoi(av[1]);
 		sum = 0;
 		while (nbr > 0)
-			if (ft_isprime(nbr--))
+		{
+			if (ft_isprime(nbr))
 					sum += nbr;
+			nbr--;
+		}
 		ft_putnbr(sum);
 	}
 	write(1, "\n", 1);
