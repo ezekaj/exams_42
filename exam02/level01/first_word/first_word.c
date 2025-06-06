@@ -2,23 +2,18 @@
 
 int	main(int ac, char **av)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	if (ac != 2)
-		return (write(1, "\n", 1));
-	while(av[1][i])
+	if (ac == 2)
 	{
-		if (av[1][i] == 32 || (av[1][i] >= 9 && av[1][i] <= 13))
-		{
+		while (av[1][i] == 32 || av[1][i] == '\t')
 			i++;
-			write(1, "\n", 1);
-		}
-		else
+		while ( av[1][i] && (av[1][i] != 32 && av[1][i] != '\t'))
 		{
 			write(1, &av[1][i], 1);
+			i++;
 		}
-		i++;
 	}
 	write(1, "\n", 1);
 	return (0);
